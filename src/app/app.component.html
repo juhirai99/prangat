@@ -1,0 +1,15 @@
+
+<header class="navbar navbar-expand navbar-dark bg-dark" (onLogin)="OnLoggedIn($event)">
+  <div class="topnav">
+    <a class="active" [routerLink]="['/']">Home</a>
+    <a  [routerLink]="['login']" *ngIf="!isLoggedIn">Login</a>
+    <a  [routerLink]="['singup']" *ngIf="!isLoggedIn">Register</a>
+    <a  [routerLink]="['profile']" *ngIf="isLoggedIn">Profile</a>
+    <a  [routerLink]="['/']" *ngIf="isLoggedIn" (click)="notLoggedIn">Logout</a>
+  </div>
+</header>
+<div class="jumbotron">
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+</div>
